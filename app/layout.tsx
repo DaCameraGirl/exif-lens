@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "EXIF Lens – by DaCameraGirl",
-  description: "Beautiful, private, local-only EXIF metadata viewer for photographers. Drag a photo in, see every camera setting. 100% in-browser, zero uploads.",
+  description: "EXIF metadata viewer for photographers. Drag a photo in, see every camera setting.",
   openGraph: {
     title: "EXIF Lens – by DaCameraGirl",
-    description: "Beautiful, private, local-only EXIF metadata viewer for photographers.",
+    description: "EXIF metadata viewer for photographers.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "EXIF Lens – by DaCameraGirl",
-    description: "Beautiful, private, local-only EXIF metadata viewer for photographers.",
+    description: "EXIF metadata viewer for photographers.",
   },
 };
 

@@ -188,7 +188,7 @@ export default function ExifLens() {
             </div>
             <div>
               <div className="font-display text-xl font-700 tracking-tight">EXIF Lens</div>
-              <div className="text-[11px] text-zinc-500 -mt-0.5">by DaCameraGirl • 100% local • zero uploads</div>
+              <div className="text-[11px] text-zinc-500 -mt-0.5">by DaCameraGirl</div>
             </div>
           </div>
           <div className="hidden sm:flex items-center gap-5 text-xs text-zinc-500">
@@ -217,8 +217,8 @@ export default function ExifLens() {
               </div>
               <h1 className="font-display text-4xl sm:text-5xl font-600 mb-3 tracking-tight">Drop a photo here</h1>
               <p className="text-zinc-400 max-w-md mx-auto mb-6">
-                See every camera setting, GPS location, and hidden metadata — instantly, privately, right in your browser.
-                No uploads, no tracking, no nonsense.
+                See every camera setting, GPS location, and hidden metadata — instantly.
+                No nonsense.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-500 mb-8">
                 <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">JPEG</span>
@@ -231,7 +231,7 @@ export default function ExifLens() {
               <button className="px-6 py-3 rounded-full bg-[#d4ff4d] text-zinc-950 font-600 text-sm hover:bg-[#c8f03a] transition-colors">
                 Choose files
               </button>
-              <p className="text-[11px] text-zinc-600 mt-4">or paste from clipboard • drag multiple • 100% local</p>
+              <p className="text-[11px] text-zinc-600 mt-4">or paste from clipboard • drag multiple</p>
             </div>
           </div>
         ) : (
@@ -420,7 +420,7 @@ export default function ExifLens() {
                   <div className="rounded-[20px] bg-[#1a1e0f] border border-[#2a3a0f] px-5 py-4 text-xs text-zinc-400 flex items-start gap-3">
                     <Shield className="w-4 h-4 text-[#a8e635] flex-shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-zinc-200">100% private.</strong> Your photos never leave your device. All EXIF parsing happens locally in your browser. Use the "Strip EXIF &amp; save" button before posting online to remove GPS coordinates and camera metadata.
+                      Use the "Strip EXIF &amp; save" button before posting online to remove GPS coordinates and camera metadata.
                     </div>
                   </div>
                 </>

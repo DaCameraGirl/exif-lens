@@ -272,7 +272,7 @@ export default function ExifLens() {
                     onClick={stripExif}
                     className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-medium transition-colors"
                   >
-                    <Download className="w-3.5 h-3.5" /> Strip EXIF &amp; save
+                    <Download className="w-3.5 h-3.5" /> Export clean copy
                   </button>
                   <button
                     onClick={copyExifJson}
@@ -406,7 +406,7 @@ export default function ExifLens() {
                   <div className="rounded-[20px] bg-[#1a1e0f] border border-[#2a3a0f] px-5 py-4 text-xs text-zinc-400 flex items-start gap-3">
                     <Shield className="w-4 h-4 text-[#a8e635] flex-shrink-0 mt-0.5" />
                     <div>
-                      Use the "Strip EXIF &amp; save" button before posting online to remove GPS coordinates and camera metadata.
+                      Use &quot;Export clean copy&quot; before posting online. It redraws the image and saves a metadata-free JPG or PNG — not a byte-perfect copy of HEIC/TIFF/WebP/AVIF originals.
                     </div>
                   </div>
                 </>

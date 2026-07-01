@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { Camera, Aperture, Timer, Sun, MapPin, Calendar, Upload, X, Download, Shield, Ruler, Zap, HardDrive, Hash, ChevronDown, ChevronRight, Image as ImageIcon, Trash2, Copy, Check } from 'lucide-react';
+import { Aperture, Timer, Sun, MapPin, Upload, X, Download, Shield, Zap, ChevronDown, ChevronRight, Copy, Check } from 'lucide-react';
 import exifr from 'exifr';
 import dynamic from 'next/dynamic';
 
@@ -56,6 +56,11 @@ export default function ExifLens() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const activePhoto = photos.find(p => p.id === activeId) || photos[0] || null;
+
+  const openFilePicker = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    fileInputRef.current?.click();
+  }, []);
 
   const processFile = useCallback(async (file: File) => {
     const id = Math.random().toString(36).slice(2);
@@ -149,25 +154,6 @@ export default function ExifLens() {
   const lon = exif.longitude ?? exif.GPSLongitude;
   const hasGps = typeof lat === 'number' && typeof lon === 'number';
 
-  // Organize EXIF fields
-  const cameraFields = [
-    { label: 'Camera', value: [exif.Make, exif.Model].filter(Boolean).join(' ') || '—', icon: Camera },
-    { label: 'Lens', value: exif.LensModel || exif.LensInfo || '—', icon: Camera },
-    { label: 'Focal Length', value: formatFocalLength(exif.FocalLength, exif.FocalLengthIn35mmFilm), icon: Ruler },
-  ];
-  const exposureFields = [
-    { label: 'Aperture', value: exif.FNumber ? `ƒ/${exif.FNumber}` : '—', icon: Aperture },
-    { label: 'Shutter', value: formatShutterSpeed(exif.ExposureTime), icon: Timer },
-    { label: 'ISO', value: exif.ISO ? `ISO ${exif.ISO}` : '—', icon: Sun },
-    { label: 'EV', value: exif.ExposureCompensation != null ? `${exif.ExposureCompensation >= 0 ? '+' : ''}${exif.ExposureCompensation}` : '—', icon: Zap },
-  ];
-  const fileFields = [
-    { label: 'File', value: activePhoto?.file.name || '—' },
-    { label: 'Size', value: activePhoto ? formatFileSize(activePhoto.file.size) : '—' },
-    { label: 'Dimensions', value: exif.ExifImageWidth && exif.ExifImageHeight ? `${exif.ExifImageWidth} × ${exif.ExifImageHeight}` : '—' },
-    { label: 'Date Taken', value: exif.DateTimeOriginal ? new Date(exif.DateTimeOriginal).toLocaleString() : '—' },
-  ];
-
   const allTags = exif ? Object.entries(exif).sort(([a],[b]) => a.localeCompare(b)) : [];
 
   return (
@@ -206,7 +192,7 @@ export default function ExifLens() {
             onDrop={handleDrop}
             onDragOver={e => { e.preventDefault(); setDragOver(true); }}
             onDragLeave={() => setDragOver(false)}
-            onClick={() => fileInputRef.current?.click()}
+            onClick={openFilePicker}
             className={`rounded-[28px] border-2 border-dashed transition-all cursor-pointer ${
               dragOver ? 'border-[#d4ff4d] bg-[#d4ff4d]/5' : 'border-zinc-700 bg-zinc-900/40 hover:border-zinc-600 hover:bg-zinc-900/70'
             }`}
@@ -220,15 +206,14 @@ export default function ExifLens() {
                 See every camera setting, GPS location, and hidden metadata — instantly.
                 No nonsense.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-500 mb-8">
-                <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">JPEG</span>
-                <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">HEIC</span>
-                <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">PNG</span>
-                <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">TIFF</span>
-                <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">WebP</span>
-                <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">AVIF</span>
-              </div>
-              <button className="px-6 py-3 rounded-full bg-[#d4ff4d] text-zinc-950 font-semibold text-sm hover:bg-[#c8f03a] transition-colors">
+              <p className="text-xs text-zinc-500 mb-8">
+                Supports JPEG, HEIC, PNG, TIFF, WebP, AVIF
+              </p>
+              <button
+                type="button"
+                onClick={openFilePicker}
+                className="px-6 py-3 rounded-full bg-[#d4ff4d] text-zinc-950 font-semibold text-sm hover:bg-[#c8f03a] transition-colors"
+              >
                 Choose files
               </button>
               <p className="text-[11px] text-zinc-600 mt-4">or paste from clipboard • drag multiple</p>
@@ -272,7 +257,8 @@ export default function ExifLens() {
                   </button>
                 ))}
                 <button
-                  onClick={() => fileInputRef.current?.click()}
+                  type="button"
+                  onClick={openFilePicker}
                   className="flex-shrink-0 w-20 h-20 rounded-xl border-2 border-dashed border-zinc-700 hover:border-zinc-600 bg-zinc-900/40 flex items-center justify-center text-zinc-500 hover:text-zinc-400 transition-colors"
                 >
                   <Upload className="w-5 h-5" />

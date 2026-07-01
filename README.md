@@ -45,7 +45,7 @@
   <a href="https://dacameragirl.github.io/exif-lens/"><img src="https://img.shields.io/badge/▶_Open_Live-4b8063?style=for-the-badge&labelColor=181411" alt="Open live" /></a>
   <img src="https://img.shields.io/badge/Uploads-none-d4ff4d?style=for-the-badge&labelColor=181411" alt="Zero uploads" />
   <img src="https://img.shields.io/badge/Theme-dark-285a70?style=for-the-badge&labelColor=181411" alt="Dark theme" />
-  <img src="https://img.shields.io/badge/License-MIT-fffaf0?style=for-the-badge&labelColor=181411" alt="MIT license" />
+  <img src="https://img.shields.io/badge/License-All%20rights%20reserved-fffaf0?style=for-the-badge&labelColor=181411" alt="All rights reserved" />
 </p>
 
 <p align="center">
@@ -82,7 +82,7 @@ Everything runs in your browser. Your files never leave your machine.
 | 🎯 **Drag & drop** | Drop one or many photos, or paste from clipboard |
 | 📷 **Full EXIF readout** | Camera, lens, aperture, shutter, ISO, focal length, flash, WB, metering, and more |
 | 🗺️ **GPS map** | Pin on OpenStreetMap + link out to Google Maps |
-| 🧹 **Strip EXIF** | One-click clean download before posting online |
+| 🧹 **Strip EXIF** | Export a clean JPG/PNG copy with metadata removed — not a byte-perfect original-format save |
 | 📦 **Batch / filmstrip** | Flip through multiple shots like a contact sheet |
 | 📋 **Copy JSON** | Grab the raw metadata blob |
 | 🎨 **Dark UI** | Photographer-focused — no blinding white backgrounds |
@@ -122,12 +122,16 @@ Static output lands in `out/`.
 
 Photos are parsed entirely client-side with **exifr**. Nothing gets uploaded to a server — ever.
 
-Use **Strip EXIF & save** before sharing if you want to scrub GPS coordinates and camera metadata from a shot.
+Use **Export clean copy** before sharing to scrub GPS coordinates and camera metadata. The image is redrawn to a canvas and downloaded as a clean **JPG or PNG** — handy for privacy, but not a perfect preservation of HEIC/TIFF/WebP/AVIF originals.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
 <p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=footer&text=Built%20with%20💛%20by%20DaCameraGirl&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Footer" /></p>
 
+## License
+
+© 2026 Angela Hudson (DaCameraGirl). All rights reserved. See [LICENSE](LICENSE).
+
 <p align="center">
   <strong>EXIF Lens</strong> — see what your camera saw.<br/>
-  MIT · <a href="https://github.com/DaCameraGirl/exif-lens">github.com/DaCameraGirl/exif-lens</a>
+  All rights reserved · <a href="https://github.com/DaCameraGirl/exif-lens">github.com/DaCameraGirl/exif-lens</a>
 </p>

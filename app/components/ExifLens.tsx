@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef } from 'react';
 import { Camera, Aperture, Timer, Sun, MapPin, Calendar, Upload, X, Download, Shield, Ruler, Zap, HardDrive, Hash, ChevronDown, ChevronRight, Image as ImageIcon, Trash2, Copy, Check } from 'lucide-react';
-import * as exifr from 'exifr';
+import exifr from 'exifr';
 import dynamic from 'next/dynamic';
 
 // Dynamically import map to avoid SSR issues
@@ -187,7 +187,7 @@ export default function ExifLens() {
               <Aperture className="w-5 h-5 text-zinc-950" strokeWidth={2.5} />
             </div>
             <div>
-              <div className="font-display text-xl font-700 tracking-tight">EXIF Lens</div>
+              <div className="font-display text-xl font-bold tracking-tight">EXIF Lens</div>
               <div className="text-[11px] text-zinc-500 -mt-0.5">by DaCameraGirl</div>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function ExifLens() {
               <div className="w-16 h-16 mx-auto rounded-2xl bg-zinc-800 flex items-center justify-center mb-6">
                 <Upload className="w-7 h-7 text-zinc-400" />
               </div>
-              <h1 className="font-display text-4xl sm:text-5xl font-600 mb-3 tracking-tight">Drop a photo here</h1>
+              <h1 className="font-display text-4xl sm:text-5xl font-semibold mb-3 tracking-tight">Drop a photo here</h1>
               <p className="text-zinc-400 max-w-md mx-auto mb-6">
                 See every camera setting, GPS location, and hidden metadata — instantly.
                 No nonsense.
@@ -228,7 +228,7 @@ export default function ExifLens() {
                 <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">WebP</span>
                 <span className="px-3 py-1.5 rounded-full bg-zinc-800/80">AVIF</span>
               </div>
-              <button className="px-6 py-3 rounded-full bg-[#d4ff4d] text-zinc-950 font-600 text-sm hover:bg-[#c8f03a] transition-colors">
+              <button className="px-6 py-3 rounded-full bg-[#d4ff4d] text-zinc-950 font-semibold text-sm hover:bg-[#c8f03a] transition-colors">
                 Choose files
               </button>
               <p className="text-[11px] text-zinc-600 mt-4">or paste from clipboard • drag multiple</p>
@@ -284,13 +284,13 @@ export default function ExifLens() {
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={stripExif}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-500 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-medium transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" /> Strip EXIF &amp; save
                   </button>
                   <button
                     onClick={copyExifJson}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-500 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-xs font-medium transition-colors"
                   >
                     {copied ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Copy className="w-3.5 h-3.5" />}
                     {copied ? 'Copied!' : 'Copy JSON'}
@@ -318,7 +318,7 @@ export default function ExifLens() {
                   {/* Hero exposure card */}
                   <div className="rounded-[24px] bg-zinc-900 border border-zinc-800 px-7 sm:px-10 py-8 sm:py-10">
                     <div className="text-[11px] uppercase tracking-widest text-zinc-500 mb-2">Exposure</div>
-                    <div className="font-display text-4xl sm:text-5xl font-600 tracking-tight mb-6">
+                    <div className="font-display text-4xl sm:text-5xl font-semibold tracking-tight mb-6">
                       {exif.FNumber ? `ƒ/${exif.FNumber}` : '—'}
                       <span className="text-zinc-600 mx-3">·</span>
                       {formatShutterSpeed(exif.ExposureTime)}
@@ -346,7 +346,7 @@ export default function ExifLens() {
                     ].map(s => (
                       <div key={s.label} className="rounded-2xl bg-zinc-900 border border-zinc-800 px-4 py-4">
                         <div className="text-[10px] uppercase tracking-wider text-zinc-500 mb-1">{s.label}</div>
-                        <div className="font-600 text-zinc-100">{s.value}</div>
+                        <div className="font-semibold text-zinc-100">{s.value}</div>
                         {s.sub && <div className="text-[11px] text-zinc-500 mt-0.5">{s.sub}</div>}
                       </div>
                     ))}
@@ -356,7 +356,7 @@ export default function ExifLens() {
                   {hasGps ? (
                     <div className="rounded-[24px] bg-zinc-900 border border-zinc-800 overflow-hidden">
                       <div className="px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm font-600"><MapPin className="w-4 h-4 text-zinc-400" /> Location</div>
+                        <div className="flex items-center gap-2 text-sm font-semibold"><MapPin className="w-4 h-4 text-zinc-400" /> Location</div>
                         <div className="text-xs font-mono2 text-zinc-500">{formatGPS(lat, lon)}</div>
                       </div>
                       <div className="h-[280px]">
@@ -397,7 +397,7 @@ export default function ExifLens() {
                       onClick={() => setShowAllTags(!showAllTags)}
                       className="w-full px-6 py-4 flex items-center justify-between hover:bg-zinc-800/50 transition-colors"
                     >
-                      <span className="text-sm font-600">All EXIF Tags <span className="text-zinc-500 font-normal">({allTags.length})</span></span>
+                      <span className="text-sm font-semibold">All EXIF Tags <span className="text-zinc-500 font-normal">({allTags.length})</span></span>
                       {showAllTags ? <ChevronDown className="w-4 h-4 text-zinc-500" /> : <ChevronRight className="w-4 h-4 text-zinc-500" />}
                     </button>
                     {showAllTags && (

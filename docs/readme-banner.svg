@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-label="EXIF Lens">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#12102a"/>
+      <stop offset="100%" stop-color="#0d1b33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4ff4d"/>
+      <stop offset="100%" stop-color="#a8e635"/>
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4ff4d" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#d4ff4d" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#a8e635" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="220" rx="18" fill="url(#bg)"/>
+  <rect x="-200" y="0" width="240" height="220" rx="18" fill="url(#shimmer)" opacity="0.9">
+    <animate attributeName="x" values="-240;920" dur="7s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1" y="1" width="918" height="218" rx="17" fill="none" stroke="#d4ff4d" stroke-width="2" opacity="0.35">
+    <animate attributeName="opacity" values="0.35;0.65;0.35" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <circle cx="96" cy="94" r="34" fill="none" stroke="#d4ff4d" stroke-width="2" opacity="0.25"/>
+  <circle cx="96" cy="94" r="24" fill="none" stroke="#d4ff4d" stroke-width="2" opacity="0.45">
+    <animate attributeName="r" values="22;26;22" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="96" cy="94" r="12" fill="none" stroke="#d4ff4d" stroke-width="2.5" opacity="0.9"/>
+  <line x1="96" y1="60" x2="118" y2="82" stroke="#d4ff4d" stroke-width="2" stroke-linecap="round" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" values="0 96 94;18 96 94;-18 96 94;0 96 94" dur="4s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="72" cy="118" r="3" fill="#d4ff4d">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="72" r="3" fill="#a8e635">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.7s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="170" y="92" fill="#f8fbff" font-family="Segoe UI, system-ui, sans-serif" font-size="38" font-weight="800">EXIF Lens</text>
+  <text x="170" y="126" fill="#9db4d1" font-family="Segoe UI, system-ui, sans-serif" font-size="17" font-weight="500">Drag a photo in — see every camera setting. 100% in your browser.</text>
+  <rect x="170" y="148" width="88" height="28" rx="14" fill="rgba(212,255,77,0.12)" stroke="#d4ff4d66" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.75;1" dur="2.5s" begin="0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="214" y="167" fill="#d4ff4d" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">EXIF</text>
+  <rect x="270" y="148" width="96" height="28" rx="14" fill="rgba(168,230,53,0.12)" stroke="#a8e63566" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.75;1" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="318" y="167" fill="#a8e635" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">PRIVATE</text>
+  <rect x="378" y="148" width="88" height="28" rx="14" fill="rgba(212,255,77,0.12)" stroke="#d4ff4d66" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.75;1" dur="2.5s" begin="0.6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="422" y="167" fill="#d4ff4d" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">LOCAL</text>
+</svg>

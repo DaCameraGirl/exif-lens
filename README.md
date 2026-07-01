@@ -53,6 +53,19 @@
 </p>
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=📱%20Scan%20%26%20open&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Scan and open" /></p>
+
+<p align="center">
+  <a href="https://dacameragirl.github.io/exif-lens/">
+    <img src="docs/qr-card.svg" alt="QR code — scan to open EXIF Lens on your phone" width="280" />
+  </a>
+</p>
+
+<p align="center">
+  <em>Point your camera at the code — opens the live demo on iPhone, iPad, or Android.</em>
+</p>
+
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
 <p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=📷%20What%20it%20does&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="What it does" /></p>
 
 **Live:** [dacameragirl.github.io/exif-lens](https://dacameragirl.github.io/exif-lens/)

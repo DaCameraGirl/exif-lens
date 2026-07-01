@@ -431,6 +431,26 @@ export default function ExifLens() {
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-600">
+          <div className="mb-8 flex flex-col items-center gap-3">
+            <a
+              href="https://dacameragirl.github.io/exif-lens/"
+              className="group flex flex-col sm:flex-row items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-5 py-4 hover:border-[#d4ff4d]/40 hover:bg-zinc-900 transition-colors"
+              aria-label="Open EXIF Lens live demo"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/site-qr.svg`}
+                alt="QR code for EXIF Lens"
+                width={120}
+                height={120}
+                className="rounded-xl border border-zinc-800 bg-[#070b14] p-2 group-hover:border-[#d4ff4d]/30 transition-colors"
+              />
+              <span className="text-left">
+                <span className="block text-sm font-semibold text-zinc-200">Scan to open on your phone</span>
+                <span className="block mt-1 font-mono2 text-[11px] text-zinc-500">dacameragirl.github.io/exif-lens</span>
+              </span>
+            </a>
+          </div>
           <p>Built with 💛 by <a href="https://github.com/DaCameraGirl" className="hover:text-zinc-400 transition-colors">DaCameraGirl</a> • <a href="https://github.com/DaCameraGirl/exif-lens" className="hover:text-zinc-400 transition-colors">Open source on GitHub</a></p>
           <p className="mt-1.5">Powered by exifr • Leaflet / OpenStreetMap • Next.js 15</p>
         </footer>

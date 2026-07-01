@@ -194,7 +194,7 @@ export default function ExifLens() {
           <div className="hidden sm:flex items-center gap-5 text-xs text-zinc-500">
             <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> Private</span>
             <span className="flex items-center gap-1.5"><Zap className="w-3.5 h-3.5" /> Fast</span>
-            <a href="https://github.com/DaCameraGirl/nextjs-boilerplate" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 transition-colors">GitHub →</a>
+            <a href="https://github.com/DaCameraGirl/exif-lens" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 transition-colors">GitHub →</a>
           </div>
         </div>
       </header>
@@ -431,7 +431,7 @@ export default function ExifLens() {
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-600">
-          <p>Built with 💛 by <a href="https://github.com/DaCameraGirl" className="hover:text-zinc-400 transition-colors">DaCameraGirl</a> • <a href="https://github.com/DaCameraGirl/nextjs-boilerplate" className="hover:text-zinc-400 transition-colors">Open source on GitHub</a></p>
+          <p>Built with 💛 by <a href="https://github.com/DaCameraGirl" className="hover:text-zinc-400 transition-colors">DaCameraGirl</a> • <a href="https://github.com/DaCameraGirl/exif-lens" className="hover:text-zinc-400 transition-colors">Open source on GitHub</a></p>
           <p className="mt-1.5">Powered by exifr • Leaflet / OpenStreetMap • Next.js 15</p>
         </footer>
       </div>

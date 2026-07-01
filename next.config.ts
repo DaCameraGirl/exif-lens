@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isGithubPages = process.env.GITHUB_PAGES === 'true';
-const repo = 'nextjs-boilerplate';
+const repo = 'exif-lens';
 
 const nextConfig: NextConfig = {
   output: 'export',

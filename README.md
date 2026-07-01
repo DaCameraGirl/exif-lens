@@ -4,7 +4,7 @@
 
 Drag a photo in → see every camera setting, instantly. No uploads, no tracking, 100% in-browser.
 
-**Live:** https://nextjs-boilerplate-eight-alpha-13.vercel.app/
+**Live:** https://exif-lens-eight-alpha-13.vercel.app/
 
 ![EXIF Lens](https://img.shields.io/badge/privacy-100%25%20local-success)
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
